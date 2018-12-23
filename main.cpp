@@ -17,13 +17,14 @@ int main(int argc, char** argv){
 	}
 	Mat image;
 	image = imread(imageName.c_str(), 1);
-	Mat leftHalf = image(Range::all(), Range(1,240));
+	Mat leftHalf = image(Range::all(), Range(2,240));
 	Mat rightHalf = image(Range::all(), Range(241, 480));
 
 	namedWindow("left half", WINDOW_AUTOSIZE);
 	namedWindow("right half", WINDOW_AUTOSIZE);
 	imshow("left half", leftHalf);
 	imshow("right half", rightHalf);
+	waitKey(0);
 
 	return 0;
 }
